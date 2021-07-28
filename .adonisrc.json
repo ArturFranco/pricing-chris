@@ -2,7 +2,7 @@
   "typescript": true,
   "commands": [
     "./commands",
-    "@adonisjs/core/commands",
+    "@adonisjs/core/build/commands",
     "@adonisjs/repl/build/commands",
     "@adonisjs/lucid/build/commands"
   ],
@@ -24,5 +24,11 @@
   ],
   "aceProviders": [
     "@adonisjs/repl"
+  ],
+  "metaFiles": [
+    {
+      "pattern": "public/**",
+      "reloadServer": false
+    }
   ]
 }
