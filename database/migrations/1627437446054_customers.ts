@@ -10,13 +10,12 @@ export default class Customers extends BaseSchema {
       table.timestamp('updated_at', { useTz: true });
 
       table.string('name').notNullable();
-      table.string('segment').notNullable(); // PM varia com o segment
+      table.string('segment').notNullable(); // A, B, C, D, E
 
-      table.string('localization').notNullable(); // ?
-      table.string('latitude').notNullable(); // ?
-      table.string('longitude').notNullable(); // ?
+      table.string('latitude').notNullable();
+      table.string('longitude').notNullable();
 
-      table.float('sales_amount').notNullable(); // qnt maior, menor o PM
+      table.float('sales_amount').notNullable();
     });
   }
 

@@ -11,6 +11,7 @@ export default class Products extends BaseSchema {
 
       table.string('name').notNullable();
 
+      table.float('direct_costs').notNullable();
       table.float('base_min_price').notNullable();
     });
   }

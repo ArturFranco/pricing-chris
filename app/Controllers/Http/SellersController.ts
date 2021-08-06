@@ -4,7 +4,7 @@ import Seller from '../../Models/Seller';
 
 export default class SellersController {
 
-  public async index ({}: HttpContextContract) {
+  public async index({}: HttpContextContract) {
     return await Seller.all();
   }
 

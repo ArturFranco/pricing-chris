@@ -15,5 +15,8 @@ export default class Product extends BaseModel {
   public name: string;
 
   @column()
+  public directCosts: number;
+
+  @column()
   public baseMinPrice: number;
 }

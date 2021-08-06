@@ -4,7 +4,7 @@ import Customer from '../../Models/Customer';
 
 export default class CustomersController {
 
-  public async index ({}: HttpContextContract) {
+  public async index({}: HttpContextContract) {
     return await Customer.all();
   }
 

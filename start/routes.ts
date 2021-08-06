@@ -21,5 +21,12 @@
 import Route from '@ioc:Adonis/Core/Route';
 
 Route.get('/', async () => {
-  return { hello: 'world' }
+  return { message: 'Pricing Chris API is online =)' };
 });
+
+Route.resource('/customer', 'CustomersController').apiOnly();
+Route.resource('/product', 'ProductsController').apiOnly();
+Route.resource('/seller', 'SellersController').apiOnly();
+Route.resource('/negotiation', 'NegotiationsController').apiOnly();
+
+Route.get('/negotiation/:id/validate', 'NegotiationsController.validatePrice');

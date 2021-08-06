@@ -28,4 +28,6 @@ export default class Customer extends BaseModel {
 
   @column()
   public salesAmount: number;
+
+  public distance: number;
 }

@@ -4,7 +4,7 @@ import Product from '../../Models/Product';
 
 export default class CustomersController {
 
-  public async index ({}: HttpContextContract) {
+  public async index({}: HttpContextContract) {
     return await Product.all();
   }
 

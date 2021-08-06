@@ -3,7 +3,7 @@ import { BaseModel, column } from '@ioc:Adonis/Lucid/Orm';
 
 export default class Seller extends BaseModel {
   @column({ isPrimary: true })
-  public id: number;
+  public cpf: string;
 
   @column.dateTime({ autoCreate: true })
   public createdAt: DateTime;

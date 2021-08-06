@@ -5,13 +5,14 @@ export default class Sellers extends BaseSchema {
 
   public async up () {
     this.schema.createTable(this.tableName, (table) => {
-      table.increments('id');
+      table.string('cpf').unique().notNullable().primary();
       table.timestamp('created_at', { useTz: true });
       table.timestamp('updated_at', { useTz: true });
 
       table.string('name').notNullable();
 
-      table.float('xp_level').notNullable(); // 0 to 10, >= 7 (-PM) | < 7 (+PM)
+      // 1. trainee, 2. junior, 3. mid, 4. senior, 5. specialist
+      table.integer('xp_level').notNullable();
     });
   }
 
