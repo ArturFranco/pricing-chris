@@ -30,3 +30,5 @@ Route.resource('/seller', 'SellersController').apiOnly();
 Route.resource('/negotiation', 'NegotiationsController').apiOnly();
 
 Route.get('/negotiation/:id/validate', 'NegotiationsController.validatePrice');
+
+Route.get('/negotiation/:id/pnl', 'PnlsController.show');
