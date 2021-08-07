@@ -1,0 +1,96 @@
+{
+  "customers": [
+    {
+      "name": "Cliente 1",
+      "segment": "A",
+      "latitude": "-8.071731",
+      "longitude": "-34.880872",
+      "sales_amount": 5000
+    },
+    {
+      "name": "Cliente 2",
+      "segment": "D",
+      "latitude": "-8.061534",
+      "longitude": "-34.877365",
+      "sales_amount": 3000
+    },
+    {
+      "name": "Cliente 3",
+      "segment": "E",
+      "latitude": "-8.064174",
+      "longitude": "-34.878092",
+      "sales_amount": 2500
+    },
+    {
+      "name": "Cliente 4",
+      "segment": "C",
+      "latitude": "-8.092918",
+      "longitude": "-34.932887",
+      "sales_amount": 7000
+    },
+    {
+      "name": "Cliente 5",
+      "segment": "B",
+      "latitude": "-8.098638",
+      "longitude": "-34.933962",
+      "sales_amount": 6500
+    }
+  ],
+  "products": [
+    {
+      "name": "Pedra da Sorte",
+      "direct_costs": 350,
+      "base_min_price": 700
+    },
+    {
+      "name": "Pedra Fofa",
+      "direct_costs": 200,
+      "base_min_price": 1.50
+    }
+  ],
+  "sellers": [
+    {
+      "name": "João",
+      "cpf": "01234567890",
+      "xp_level": 3
+    },
+    {
+      "name": "Pedro",
+      "cpf": "11111111111",
+      "xp_level": 5
+    },
+    {
+      "name": "José",
+      "cpf": "99999999999",
+      "xp_level": 1
+    }
+  ],
+  "negotiations": [
+    {
+      "is_closed": true,
+      "negotiated_price": 800,
+      "customer_id": 1,
+      "product_id": 1,
+      "seller_cpf": "01234567890"
+    },
+    {
+      "is_closed": true,
+      "negotiated_price": 650,
+      "customer_id": 4,
+      "product_id": 1,
+      "seller_cpf": "11111111111"
+    },
+    {
+      "is_closed": false,
+      "customer_id": 3,
+      "product_id": 1,
+      "seller_cpf": "01234567890"
+    },
+    {
+      "is_closed": false,
+      "customer_id": 4,
+      "product_id": 2,
+      "seller_cpf": "99999999999"
+    }
+  ]
+}

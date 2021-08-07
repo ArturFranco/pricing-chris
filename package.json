@@ -7,7 +7,9 @@
     "start": "node server.js",
     "dev": "node ace serve --watch",
     "lint": "eslint . --ext=.ts",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "migrate-db": "node ace migration:run",
+    "start:docker": "yarn migrate-db && yarn dev"
   },
   "devDependencies": {
     "@adonisjs/assembler": "5.0.0",
