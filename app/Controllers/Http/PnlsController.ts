@@ -16,19 +16,25 @@ export default class PnlsController {
 
   private static readonly TAX = 0.1125;
 
+  private static readonly TEN_PERCENT = 0.1;
   private static readonly PERCENT = 100;
   
   public async show({ request, params, response }: HttpContextContract): Promise<void> {
-    const { negotiatedPrice, product } = await Negotiation.query()
+    const { negotiatedPrice, customer, product } = await Negotiation.query()
       .where('id', params.id)
+      .preload('customer')
       .preload('product')
       .firstOrFail();
 
     // Receita total (preço negociado)
-    const price = negotiatedPrice ? negotiatedPrice : parseFloat(request.input('price'));
+    let price = negotiatedPrice ? negotiatedPrice : parseFloat(request.input('price'));
 
     if (!price) {
       return response.badRequest({ error: "You must provide a price for this negotiation" });
+    }
+
+    if (product.name === "Pedra Fofa") {
+      price *= customer.salesAmount * PnlsController.TEN_PERCENT;
     }
 
     // Custos de fabricação/produção/venda

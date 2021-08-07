@@ -39,7 +39,7 @@ export default class NegotiationsController {
   }
 
   public async validatePrice({ request, params, response }: HttpContextContract): Promise<void> {
-    const price = parseInt(request.input('price'));
+    const price = parseFloat(request.input('price'));
 
     const negotiation = await Negotiation.query()
       .where('id', params.id)
@@ -64,7 +64,7 @@ export default class NegotiationsController {
 
     // Sales amount (BRL)
     totalDiscount += await this.getDiscountByCustomerSalesAmount(customer.salesAmount);
-    
+
     // Customer segment
     totalDiscount += this.getDiscountByCustomerSegment(customer.segment);
 
@@ -118,7 +118,11 @@ export default class NegotiationsController {
       .whereIn('customer_id', nearestCustomersId)
       .andWhere('product_id', product.id)
       .andWhere('is_closed', true);
-
+    
+    if (negotiations.length  === 0) {
+      return 0;
+    }
+    
     const negotiatedPrices = negotiations.map(negotiation => negotiation.negotiatedPrice);
     const averagePrice = negotiatedPrices.reduce((a, b) => a + b) / negotiations.length;
     const averageDiscount = (averagePrice / product.baseMinPrice) - 1;
